@@ -1,0 +1,138 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class Art_Miller20 extends JPanel
+{
+    int color = 4;
+
+    public void init()
+    {
+        String colors = "What color should this be? 1=red, 2=blue, 3=yellow, 4=green, 7=pink, or 6=purple";        
+        String colorString = JOptionPane.showInputDialog(colors);
+        color = Integer.parseInt(colorString);
+    }
+    
+    public void paint(Graphics canvas)
+    {
+        Color red = new Color(255, 0, 0);
+        Color orange = new Color(255, 97, 61);
+        Color blue = new Color(0, 0, 255);
+        Color yellow = new Color(255, 255, 0);
+        Color green = new Color(0, 255, 0);
+        Color purple = new Color(200, 0, 255);
+        Color pink = new Color(255, 70, 250);
+        Color black = new Color(0,0,0);
+        
+        String colorString = JOptionPane.showInputDialog(colors);
+        Integer.parseInt(colorString);
+        
+        //leave this mysterious line of code here.  Otherwise your
+        //background color won't be painted
+        super.paintComponent(canvas);
+
+        if (colorString.equals(1)){
+            canvas.setColor(red);
+            canvas.fillOval(35,35,250,250);
+            canvas.setColor(orange);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }   
+        if (colorString.equals(2)){
+
+            canvas.setColor(yellow);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }   
+        if (colorString.equals(3)){
+
+            canvas.setColor(yellow);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }   
+        if (colorString.equals(4)){
+
+            canvas.setColor(yellow);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }
+        if (colorString.equals(5)){
+
+            canvas.setColor(yellow);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }
+        if (colorString.equals(6)){
+
+            canvas.setColor(yellow);
+            canvas.fillOval(50,50,300,300);
+            canvas.setColor(black);
+            canvas.fillOval(260,160,10,10);
+            canvas.fillOval(140,160,10,10);
+            canvas.drawArc(80,80,240,240,180,180);
+            canvas.drawArc(80,70,241,230,190,160);
+        }   
+        Color white = new Color(255, 255, 255);
+    setBackground(white);
+    }
+
+   
+/**
+ * The program begins by creating a window frame and putting a drawing canvas
+ * into it.  CS203 Studen
+ * ts can safely ignore this method though you may wish
+ * to change the size of the window from the 500x500 specified below.
+ */
+public static void main(String[] args)
+{
+//Create a window frame
+JFrame myFrame = new JFrame();
+myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+myFrame.setSize(500,500);
+
+// put the picture in the frame
+Art_Miller20 studentArt = new Art_Miller20();
+studentArt.init();
+myFrame.add(studentArt);
+
+JFrame parent = new JFrame("Yo");
+parent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+JButton steve = new JButton();
+steve.setText("New Color");
+parent.add(steve);
+parent.pack();
+parent.setVisible(true);
+steve.addActionListener(new java.awt.event.ActionListener()
+{            
+@Override
+public void actionPerformed(java.awt.event.ActionEvent evt){
+String name = JOptionPane.showInputDialog(parent, "What color would you like", null);
+}
+}
+);
+
+               
+//show the user
+myFrame.setVisible(true);
+}    
+}
